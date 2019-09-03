@@ -1,0 +1,9 @@
+version: 1
+jobs:
+  patata_name:
+    image: node
+    script:
+      - npm install truffle
+      - npm install
+      - npx truffle compile
+      - npx truffle test
