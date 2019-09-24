@@ -1,9 +1,17 @@
 version: 1
 jobs:
-  patata_name:
+  compile:
     image: node
     script:
       - npm install truffle
-      - npm install
-      - npx truffle compile
-      - npx truffle test
+      - ./node_modules/.bin/truffle compile
+  test:
+    image: node
+    script:
+      - npm install truffle
+      - ./node_modules/.bin/truffle test
+stages:
+  - pipeline:
+      jobs:
+        - compile
+        - test
