@@ -4,12 +4,12 @@ jobs:
     image: node
     script:
       - npm install truffle
-      - ./node_modules/.bin/truffle compile
+      - npx truffle compile
   test:
     image: node
     script:
       - npm install truffle
-      - ./node_modules/.bin/truffle test
+      - npx truffle test
 stages:
   - pipeline:
       jobs:
